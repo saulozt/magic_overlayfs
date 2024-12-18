@@ -18,15 +18,15 @@ jobs:
         fetch-depth: 0
     - name: Setup Android NDK
       run: |
-        wget https://dl.google.com/android/repository/android-ndk-r23b-linux.zip
-        unzip android-ndk-r23b-linux.zip
+        wget https://dl.google.com/android/repository/android-ndk-r28-beta2-linux.zip
+        unzip android-ndk-r28-beta2-linux.zip
     - name: Build
       id: build
       run: |
         chmod 777 ./build.sh
         ./build.sh
     - name: Upload release
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: magisk-overlayfs-release
         path: out/magisk-module
